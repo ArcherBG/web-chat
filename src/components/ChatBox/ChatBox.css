@@ -1,0 +1,27 @@
+.ChatBox {
+    border: 2px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ChatBox-header {
+    background-color: brown; 
+    color: white;
+    padding: 0.25rem; 
+}
+
+.ChatBox-message-wrapper {
+    flex: 1;
+    padding: 1rem;
+}
+
+.ChatBox-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.ChatBox-input {
+    flex: 1;
+    height: 1.5rem;
+}

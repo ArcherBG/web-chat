@@ -3,7 +3,8 @@ import './ChatList.css';
 import ChatListElement from '../ChatListElement/ChatListElement';
 import { readChatGroupData } from '../../db/chatGroups/chatGroups';
 
-function ChatList() {
+function ChatList(props) {
+    const { handleClick } = props;
     const [chatGroups, setChats] = useState({});
 
     useEffect(() => {
@@ -33,7 +34,7 @@ function ChatList() {
                         usernames = Object.keys(users).map(k => users[k].name);
                     }
                     return (
-                        <ChatListElement key={key} title={key} subtitle={usernames} />
+                        <ChatListElement key={key} handleClick={handleClick} id={key} title={key} subtitle={usernames} />
                     );
                 })}
             </div>

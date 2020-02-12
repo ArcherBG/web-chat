@@ -2,9 +2,9 @@ import React from 'react';
 import './ChatListElement.css';
 
 function ChatListElement(props) {
-    const { title, subtitle } = props;
+    const { handleClick, id, title, subtitle } = props;
     return (
-        <div className="ChatListElement">
+        <div className="ChatListElement" onClick={(event) => handleClick(event, id)}>
             <div className="ChatListElement-title">
                 {title}
             </div>

@@ -1,0 +1,14 @@
+.Chat {
+  text-align: center;
+  background-color: #282c34;
+}
+
+.Chat-Layout {
+  height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: row;
+}
+
+.Chat-ChatBox {
+  flex: auto;
+}

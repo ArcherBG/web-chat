@@ -16,8 +16,9 @@ function writeMessageData(groupName,  username, userId, message) {
     return firebase.database().ref().update(updates);
 }
 
-function readMessageData(groupName) {
-    return firebase.database.reg(`messages/${groupName}/`);
+async function readMessageData(groupName) {
+    const snapshot = await firebase.database().ref(`messages/${groupName}/`).once('value');
+    return snapshot.val();
 }
 
 function listenForNewMessages(groupName, callback) {

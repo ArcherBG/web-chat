@@ -1,0 +1,10 @@
+.ChatList {
+    min-width: 15rem;
+    width: 20rem;
+}
+
+.ChatList-title {
+    background-color: brown;
+    color: white;
+    padding: 1rem;
+}

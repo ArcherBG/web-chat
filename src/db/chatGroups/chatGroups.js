@@ -1,14 +1,24 @@
 import firebase from "firebase";
 
-function writeChatGroupData(name, userIds) {
+function writeChatGroupData(name, users) {
     let groupUsers = {};
-    userIds.map(userId => {
-        return groupUsers[userId] = true;
+    users.map(user => {
+        const formattedUser = {
+            userId: user.userId,
+            name: user.name,
+        }
+        groupUsers[user.userId] = formattedUser;
+        return groupUsers;
     });
     firebase.database().ref('chatGroups/' + name).set(groupUsers);
 }
 
+async function readChatGroupData() {
+    const snapshot  = await firebase.database().ref('chatGroups/').once('value');
+    return snapshot.val();
+}
 
 export {
-    writeChatGroupData
+    writeChatGroupData,
+    readChatGroupData
 };
