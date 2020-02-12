@@ -9,7 +9,7 @@ class Chat extends React.Component {
     super(props);
     this.state = {
       selectedChat: null,
-      messages: []
+      messages: {}
     }
   }
 

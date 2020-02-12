@@ -3,12 +3,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .ChatBox-header {
-    background-color: brown; 
+    background-color: brown;
     color: white;
-    padding: 0.25rem; 
+    padding: 0.25rem;
 }
 
 .ChatBox-message-wrapper {
