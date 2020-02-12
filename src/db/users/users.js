@@ -1,6 +1,7 @@
 import firebase from "firebase";
 
-function writeUserData(userId, name, email, imageUrl) {
+function writeUserData(user) {
+    const { userId, name, email, imageUrl } = user;
     firebase.database().ref('users/' + userId).set({
         username: name,
         email: email,
@@ -9,12 +10,12 @@ function writeUserData(userId, name, email, imageUrl) {
 }
 
 function readUserData(userId) {
-    firebase.ref('/users/' + userId).once('value').then((res, err) => {
+    return new Promise(firebase.ref('/users/' + userId).once('value').then((res, err) => {
         if(err) {
             return Promise.reject(err);
         }
         return Promise.resolve(res);
-    });
+    }));
 }
 
 export {
