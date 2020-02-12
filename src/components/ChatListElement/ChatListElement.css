@@ -1,0 +1,22 @@
+.ChatListElement {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+.ChatListElement:hover {
+    background-color: gray;
+}
+
+.ChatListElement--active {
+    background-color: gray;
+}
+
+.ChatListElement-subtitle {
+    font-size: 0.8rem;
+    font-style: italic;
+}
