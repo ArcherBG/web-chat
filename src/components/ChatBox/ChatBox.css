@@ -1,5 +1,6 @@
 .ChatBox {
-    border: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -15,14 +16,4 @@
     flex: 1;
     padding: 1rem;
     overflow-y: auto;
-}
-
-.ChatBox-form {
-    display: flex;
-    flex-direction: row;
-}
-
-.ChatBox-input {
-    flex: 1;
-    height: 1.5rem;
 }

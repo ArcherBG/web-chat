@@ -1,0 +1,9 @@
+.SendMessageForm-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.SendMessageForm-input {
+    flex: 1;
+    height: 1.5rem;
+}

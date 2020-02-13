@@ -1,15 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-import MessageList from './MessageList/MessageList';
 import './ChatBox.css';
+import MessageList from './MessageList/MessageList';
+import SendMessageForm from '../SendMessageForm/SendMessageForm';
 
 function ChatBox(props) {
-    const { messages } = props;
+    const { chatGroup, messages } = props;
     const messageEndRef = useRef(null);
     const scrollToBottom = () => {
-        messageEndRef.current.scrollIntoView({behaviour: "smooth" });
+        messageEndRef.current.scrollIntoView({ behaviour: "smooth" });
     }
 
     useEffect(scrollToBottom, [messages]);
+
     return (
         <div className="ChatBox">
             <div className="ChatBox-header">Title</div>
@@ -17,10 +19,7 @@ function ChatBox(props) {
                 <MessageList messages={messages}></MessageList>
                 <div ref={messageEndRef}></div>
             </div>
-            <form className="ChatBox-form">
-                <input className="ChatBox-input"></input>
-                <button name="button" type="submit">Send</button>
-            </form>
+            <SendMessageForm chatGroup={chatGroup} />
         </div>
     );
 }
