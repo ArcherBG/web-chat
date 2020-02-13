@@ -9,6 +9,7 @@ function MessageList(props) {
             {messages && messages.map((obj, index) => (
                 <Message
                     key={index}
+                    author={obj.author}
                     message={obj.message}
                     timestamp={obj.timestamp}
                 />)
