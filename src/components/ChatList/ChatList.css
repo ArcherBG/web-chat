@@ -1,6 +1,7 @@
 .ChatList {
     min-width: 15rem;
     width: 20rem;
+    border-right: 1px solid gray;
 }
 
 .ChatList-title {

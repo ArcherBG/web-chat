@@ -6,11 +6,11 @@ function MessageList(props) {
     const { messages } = props;
     return (
         <div>
-            {messages && Object.keys(messages).map(key => (
+            {messages && messages.map((obj, index) => (
                 <Message
-                    key={key}
-                    message={messages[key].message}
-                    timestamp={messages[key].timestamp}
+                    key={index}
+                    message={obj.message}
+                    timestamp={obj.timestamp}
                 />)
             )}
         </div>

@@ -14,7 +14,7 @@ function ChatBox(props) {
 
     return (
         <div className="ChatBox">
-            <div className="ChatBox-header">Title</div>
+            <div className="ChatBox-header">{chatGroup}</div>
             <div className="ChatBox-message-wrapper">
                 <MessageList messages={messages}></MessageList>
                 <div ref={messageEndRef}></div>

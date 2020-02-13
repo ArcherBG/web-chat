@@ -24,7 +24,7 @@ async function readMessageData(groupName) {
 function listenForNewMessages(groupName, callback) {
     const messagesRef = firebase.database().ref('messages/' + groupName);
     messagesRef.on('child_added', function (data) {
-        callback(data);
+        callback(data.val());
     });
 }
 
