@@ -3,7 +3,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
 }
 
 .ChatBox-header {
@@ -15,6 +14,7 @@
 .ChatBox-message-wrapper {
     flex: 1;
     padding: 1rem;
+    overflow-y: auto;
 }
 
 .ChatBox-form {
