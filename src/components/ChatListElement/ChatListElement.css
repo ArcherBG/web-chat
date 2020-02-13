@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+    height: 3rem;
     padding: 0.5rem 1rem;
     color: white;
     border-bottom: 1px solid gray;
@@ -16,7 +18,20 @@
     background-color: gray;
 }
 
+.ChatListElement-title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: start;
+}
+
 .ChatListElement-subtitle {
     font-size: 0.8rem;
     font-style: italic;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
 }
