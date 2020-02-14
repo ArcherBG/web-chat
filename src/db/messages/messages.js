@@ -28,8 +28,14 @@ function listenForNewMessages(groupName, callback) {
     });
 }
 
+function detachListenerForNewMessages(groupName) {
+    const messageRef = firebase.database().ref('messages/' + groupName);
+    messageRef.off('child_added');
+}
+
 export {
     writeMessageData,
     readMessageData,
     listenForNewMessages,
+    detachListenerForNewMessages,
 }
