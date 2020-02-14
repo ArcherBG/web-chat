@@ -25,7 +25,7 @@ class Chat extends React.Component {
         <div className="Chat-Layout">
           <ChatList handleClick={this.handleOpenChat}></ChatList>
           {selectedChat && (
-            <ChatBox key={selectedChat} className="Chat-ChatBox" chatGroup={selectedChat}></ChatBox>
+            <ChatBox className="Chat-ChatBox" chatGroup={selectedChat}></ChatBox>
           )}
         </div>
       </div>

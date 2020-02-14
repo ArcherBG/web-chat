@@ -7,26 +7,26 @@ import { listenForNewMessages, detachListenerForNewMessages } from '../../db/mes
 function ChatBox(props) {
     const { chatGroup } = props;
     const messageEndRef = useRef(null);
-    const scrollToBottom = () => {
-        messageEndRef.current.scrollIntoView({ behaviour: "smooth" });
-    }
 
     const [messages, setMessages] = useState([]);
-
-    const getMessages = async () => {
-        listenForNewMessages(chatGroup, (newMessages) => {
-            setMessages(messages => [...messages, newMessages]);
-        });
+    const scrollToBottom = () => {
+        messageEndRef.current.scrollIntoView({ behaviour: "smooth" });
     }
 
     useEffect(scrollToBottom);
 
     useEffect(() => {
+        const getMessages = async () => {
+            listenForNewMessages(chatGroup, (newMessages) => {
+                setMessages(messages => [...messages, newMessages]);
+            });
+        }
         getMessages();
         return () => {
+            setMessages([]);
             detachListenerForNewMessages(chatGroup);
         }
-    }, []);
+    }, [chatGroup]);
 
     return (
         <div className="ChatBox">
